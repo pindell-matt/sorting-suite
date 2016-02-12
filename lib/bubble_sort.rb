@@ -3,16 +3,22 @@ require 'pry'
 class BubbleSort
 
   def sort(array)
-    total = array.length
+    a_length = array.length
     loop do
       swap = false
-      (total - 1).times do |index|
+      (a_length - 1).times do |index|
         if array[index] > array[index + 1]
-          array[index + 1], array[index] = array[index], array [index + 1]
+
+          smaller = array[index + 1]
+          larger  = array[index]
+
+          array[index]      = smaller
+          array [index + 1] = larger
+
           swap = true
         end
       end
-      total -= 1
+      a_length -= 1
       break if swap == false
     end
     array
