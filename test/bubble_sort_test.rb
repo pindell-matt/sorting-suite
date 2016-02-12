@@ -8,6 +8,15 @@ class BubbleSortTest < Minitest::Test
   def setup
     @sorter = BubbleSort.new
   end
+  
+  def test_array_of_one_is_sorted
+    # skip
+    unsorted  = [2]
+    submitted = @sorter.sort(unsorted)
+    expected  = [2]
+
+    assert_equal expected, submitted
+  end
 
   def test_bubble_sorts_two_nums
     # skip
