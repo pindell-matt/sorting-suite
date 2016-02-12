@@ -10,9 +10,19 @@ class BubbleSortTest < Minitest::Test
   end
 
   def test_bubble_sorts_two_elements
+    # skip
     unsorted  = [2, 1]
     submitted = @sorter.sort(unsorted)
     expected  = [1, 2]
+
+    assert_equal expected, submitted
+  end
+
+  def test_bubble_sorts_three_elements
+    # skip 
+    unsorted  = [3, 2, 1]
+    submitted = @sorter.sort(unsorted)
+    expected  = [1, 2, 3]
 
     assert_equal expected, submitted
   end
