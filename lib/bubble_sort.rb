@@ -3,6 +3,7 @@ require 'pry'
 class BubbleSort
 
   def sort(array)
+    array.flatten!
     a_length = array.length
     loop do
       swap = false
