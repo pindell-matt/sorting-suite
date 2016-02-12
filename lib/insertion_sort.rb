@@ -1,21 +1,23 @@
 require 'pry'
 
 class InsertionSort
+  attr_reader :turns
 
   def sort(array)
+    @turns = 0
     array.flatten!
-    (array.length - 1).times do |iter|
-      count = iter
-      while count >= 0 && array[count] > array[count + 1]
-        smaller = array[count + 1]
-        larger  = array[count]
-
-        array[count]     = smaller
-        array[count + 1] = larger
-        count -= 1
+    (array.length).times do |iter|
+      current = array[iter]
+      previous = (iter - 1)
+      while previous >= 0 && array[previous] > current
+        array[previous + 1] = array[previous]
+        previous -= 1
       end
+      array[previous + 1] = current
+      @turns += 1
     end
     array
   end
+
 
 end

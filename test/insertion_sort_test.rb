@@ -36,6 +36,15 @@ class InsertionSortTest < Minitest::Test
     assert_equal expected, submitted
   end
 
+  def test_insertion_sorts_multiple_nums
+    # skip
+    unsorted  = [3, 7, 4, 9, 5, 2, 6, 1]
+    submitted = @sorter.sort(unsorted)
+    expected  = [1, 2, 3, 4, 5, 6, 7, 9]
+
+    assert_equal expected, submitted
+  end
+
   def test_insertion_sorts_nums_with_duplicates
     # skip
     unsorted  = [0, 2, 1, 3, 0, 4, 50, 5, 0]
