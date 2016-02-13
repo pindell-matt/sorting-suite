@@ -7,8 +7,12 @@ class MergeSort
   end
 
   def sort(array)
-    split_array(array)
-    # binding.pry
+    (array.length - 3).times do
+      split_array(array)
+      array.shift(2)
+    end
+    @sorted
+    binding.pry
   end
 
   # recursively split till count/length == 1
@@ -16,20 +20,22 @@ class MergeSort
     return array if array.count == 1
     center = (array.length / 2)
     left   = array.take(center)
-    left.count == 1 ? first_num = left[0] : split_array(left)
-
     right  = array.drop(center)
-    right.count == 1 ? second_num = right[0] : split_array(right)
 
-    if first_num < second_num
-      @sorted << first_num
-      @sorted << second_num
+    if left.count == 1
+      first   = left[0]
+      compare = right[0]
+      if first > compare
+        @sorted << compare
+        @sorted << first
+      else
+        @sorted << first
+        @sorted << compare
+      end
     else
-      @sorted << second_num
-      @sorted << first_num
+      split_array(left)
     end
-    # binding.pry
-  end
 
+  end
 
 end

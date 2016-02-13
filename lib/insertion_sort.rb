@@ -6,12 +6,12 @@ class InsertionSort
     array.flatten!
     (array.length).times do |i|
       value = array[i]
-      prev = (i - 1)
-      while prev >= 0 && array[prev] > value
-        array[prev + 1] = array[prev]
-        prev -= 1
+      key = (i - 1)
+      while key >= 0 && array[key] > value
+        array[key + 1] = array[key]
+        key -= 1
       end
-      array[prev + 1] = value
+      array[key + 1] = value
     end
     array
   end

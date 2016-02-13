@@ -10,8 +10,7 @@ class MergeSortTest < Minitest::Test
   end
 
   def test_spliting_array
-    @sorter.sort([2, 0, 1, 3])
-
+    @sorter.sort([8, 2, 5, 4, 3, 1, 6])
   end
 
   def test_array_of_one_is_sorted
