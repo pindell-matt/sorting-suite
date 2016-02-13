@@ -12,7 +12,7 @@ class MergeSort
       array.shift(2)
     end
     @sorted
-    binding.pry
+    # binding.pry
   end
 
   # recursively split till count/length == 1
@@ -21,6 +21,11 @@ class MergeSort
     center = (array.length / 2)
     left   = array.take(center)
     right  = array.drop(center)
+    # if left.count == 1
+    #   return left.first
+    # else
+    #   split_array(left)
+    # end
 
     if left.count == 1
       first   = left[0]
