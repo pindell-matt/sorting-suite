@@ -21,20 +21,25 @@ class MergeSort
       end
     end
 
-    left = split_array(@sorted)
-    new_left = process(left)
+    processed = split_array(@sorted)
+    penultimate = processed.select do |arr|
+      !arr.empty?
+    end
 
-    right = @sorted[-2..-1]
-    new_right = process(right)
+    final = process(penultimate).select do |arr|
+      !arr.empty?
+    end
 
-    final = [new_left, new_right]
-    process(final)
+    final.flatten!
   end
 
   def split_array(array)
     center = (array.length / 2)
     left   = array.take(center)
-    left.count == 2 ? left : split_array(left)
+    right  = array.drop(center)
+
+    left.count == 2 ? process(left) : split_array(left)
+    right.count == 2 ? process(right) : split_array(right)
   end
 
   def process(array)
@@ -58,7 +63,7 @@ class MergeSort
         array[0].shift
       end
     end
-    result
+    @sorted << result
   end
 
 end
