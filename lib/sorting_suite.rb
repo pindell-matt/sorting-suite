@@ -26,4 +26,11 @@ if __FILE__ == $0
   sorter.bubble_sort(array)
   sorter.insertion_sort(array)
   sorter.merge_sort(array)
+
+  benchmark_bubble = Benchmark.measure {sorter.bubble_sort(array)}
+  puts benchmark_bubble
+  benchmark_insertion = Benchmark.measure {sorter.insertion_sort(array)}
+  puts benchmark_insertion
+  benchmark_merge = Benchmark.measure {sorter.merge_sort(array)}
+  puts benchmark_merge
 end
