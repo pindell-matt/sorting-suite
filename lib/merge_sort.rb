@@ -3,6 +3,7 @@ require 'pry'
 class MergeSort
 
   def sort(array)
+    array.flatten!
     return array if array.count <= 1
     left  = []
     right = []
