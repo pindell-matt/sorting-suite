@@ -18,6 +18,22 @@ class MergeSortTest < Minitest::Test
     assert_equal expected, submitted
   end
 
+  def test_sort_even_numbered_array
+    # skip
+    submitted = @sorter.sort([4, 3, 2, 1])
+    expected  = [1, 2, 3, 4]
+
+    assert_equal expected, submitted
+  end
+
+  def test_sort_odd_numbered_array
+    # skip
+    submitted = @sorter.sort([3, 2, 5, 4, 1])
+    expected  = [1, 2, 3, 4, 5]
+
+    assert_equal expected, submitted
+  end
+
   def test_spliting_array_0
     # skip
     submitted = @sorter.sort([6, 5, 3, 1, 8, 7, 2, 4])
@@ -30,14 +46,6 @@ class MergeSortTest < Minitest::Test
     # skip
     submitted = @sorter.sort([15, 42, 16, 50, 108, 23, 8, 4])
     expected  = [4, 8, 15, 16, 23, 42, 50, 108]
-
-    assert_equal expected, submitted
-  end
-
-  def test_spliting_array_2
-    # skip
-    submitted = @sorter.sort([3, 2, 5, 4, 1])
-    expected  = [1, 2, 3, 4, 5]
 
     assert_equal expected, submitted
   end
