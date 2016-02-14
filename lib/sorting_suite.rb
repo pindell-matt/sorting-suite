@@ -21,8 +21,9 @@ class SortingSuite
 end
 
 if __FILE__ == $0
+  array = [3, 2, 1]
   sorter = SortingSuite.new
-  sorter.bubble_sort([3, 2, 1])
-  sorter.insertion_sort([3, 2, 1])
-  sorter.merge_sort([3, 2, 1])
+  sorter.bubble_sort(array)
+  sorter.insertion_sort(array)
+  sorter.merge_sort(array)
 end
