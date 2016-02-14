@@ -6,7 +6,7 @@ class InsertionSort
     array.flatten!
     (array.length).times do |i|
       value = array[i]
-      key = (i - 1)
+      key   = (i - 1)
       while key >= 0 && array[key] > value
         array[key + 1] = array[key]
         key -= 1
