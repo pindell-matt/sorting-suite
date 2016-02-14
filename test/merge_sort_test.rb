@@ -35,7 +35,7 @@ class MergeSortTest < Minitest::Test
   end
 
   def test_spliting_array_2
-    skip
+    # skip
     submitted = @sorter.sort([3, 2, 5, 4, 1])
     expected  = [1, 2, 3, 4, 5]
 
