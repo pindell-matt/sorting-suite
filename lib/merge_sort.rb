@@ -4,10 +4,10 @@ class MergeSort
 
   def initialize
     @sorted = []
-    @final = []
   end
 
   def sort(array)
+    return array if array.flatten.count == 1
     duplicate = array.dup
     count = duplicate.count / 2
 
@@ -22,39 +22,43 @@ class MergeSort
     end
 
     left = split_array(@sorted)
-      (left.flatten.count - 1).times do
-      if left[1][0].nil?
-        until left[0][0].nil?
-          @final << left[0][0]
-          left[0].shift
-        end
-      elsif left[0][0].nil?
-        until left[1][0].nil?
-          @final << left[1][0]
-          left[1].shift
-        end
-      elsif left[0][0] > left[1][0]
-        @final << left[1][0]
-        left[1].shift
-      elsif left[0][0] < left[1][0]
-        @final << left[0][0]
-        left[0].shift
-      end
-    end
-    binding.pry
+    new_left = process(left)
+
+    right = @sorted[-2..-1]
+    new_right = process(right)
+
+    final = [new_left, new_right]
+    process(final)
   end
 
   def split_array(array)
-    return array if array.count == 1
     center = (array.length / 2)
     left   = array.take(center)
+    left.count == 2 ? left : split_array(left)
+  end
 
-    if left.count == 2
-      return left
-    else
-      split_array(left)
+  def process(array)
+    result = []
+    (array.flatten.count - 1).times do
+      if array[1][0].nil?
+        until array[0][0].nil?
+          result << array[0][0]
+          array[0].shift
+        end
+      elsif array[0][0].nil?
+        until array[1][0].nil?
+          result << array[1][0]
+          array[1].shift
+        end
+      elsif array[0][0] > array[1][0]
+        result << array[1][0]
+        array[1].shift
+      elsif array[0][0] < array[1][0]
+        result << array[0][0]
+        array[0].shift
+      end
     end
-
+    result
   end
 
 end
