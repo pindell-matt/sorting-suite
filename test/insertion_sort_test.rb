@@ -9,6 +9,14 @@ class InsertionSortTest < Minitest::Test
     @sorter = InsertionSort.new
   end
 
+  def test_insertion_sort_returns_empty_array
+    unsorted  = []
+    submitted = @sorter.sort(unsorted)
+    expected  = []
+
+    assert_equal expected, submitted
+  end
+
   def test_insertion_sort_array_of_one_is_sorted
     # skip
     unsorted  = [2]
