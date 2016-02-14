@@ -4,33 +4,39 @@ require_relative 'merge_sort'
 require 'pry'
 require 'benchmark'
 
-class SortingSuite
+module SortingSuite
+  class Benchmark
 
-  def bubble_sort(array)
-    BubbleSort.new.sort(array)
-  end
+    def bubble_sort(array)
+      BubbleSort.new.sort(array)
+    end
 
-  def insertion_sort(array)
-    InsertionSort.new.sort(array)
-  end
+    def insertion_sort(array)
+      InsertionSort.new.sort(array)
+    end
 
-  def merge_sort(array)
-    MergeSort.new.sort(array)
+    def merge_sort(array)
+      MergeSort.new.sort(array)
+    end
+
+    def time
+
+    end
+
+    def fastest
+
+    end
+
+    def slowest
+
+    end
   end
 
 end
 
 if __FILE__ == $0
-  array = [3, 2, 1]
-  sorter = SortingSuite.new
-  sorter.bubble_sort(array)
-  sorter.insertion_sort(array)
-  sorter.merge_sort(array)
+  benchmark = SortingSuite::Benchmark.new
 
-  benchmark_bubble = Benchmark.measure {sorter.bubble_sort(array)}
-  puts benchmark_bubble
-  benchmark_insertion = Benchmark.measure {sorter.insertion_sort(array)}
-  puts benchmark_insertion
-  benchmark_merge = Benchmark.measure {sorter.merge_sort(array)}
-  puts benchmark_merge
+  binding.pry
+
 end
