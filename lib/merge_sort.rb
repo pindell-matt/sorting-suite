@@ -30,6 +30,7 @@ class MergeSort
       !arr.empty?
     end
 
+    binding.pry 
     final.flatten!
   end
 
