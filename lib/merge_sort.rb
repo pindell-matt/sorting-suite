@@ -1,11 +1,6 @@
 require 'pry'
 
 class MergeSort
-  attr_accessor :original
-
-  def initialize
-    @sorted = []
-  end
 
   def sort(array)
     return array if array.count <= 1
