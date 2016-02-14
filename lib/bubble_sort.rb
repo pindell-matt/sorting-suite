@@ -19,8 +19,8 @@ class BubbleSort
     array
   end
 
-  def swap!(array, a, b)
-    array[a], array[b] = array[b], array[a]
+  def swap!(array, a_index, b_index)
+    array[a_index], array[b_index] = array[b_index], array[a_index]
     array
   end
 
