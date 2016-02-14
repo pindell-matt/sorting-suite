@@ -3,7 +3,15 @@ require 'pry'
 class InsertionSort
 
   def sort(array)
-
+    array.flatten!
+    1.upto(array.length - 1) do |i|
+      j = i
+      while j > 0 && array[j - 1] > array[j]
+        array[j], array[j - 1] = array[j - 1], array[j]
+        j -= 1
+      end
+    end
+    array
   end
 
   def inplace_sort(array)
