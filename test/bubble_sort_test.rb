@@ -8,7 +8,7 @@ class BubbleSortTest < Minitest::Test
   def setup
     @sorter = BubbleSort.new
   end
-  
+
   def test_array_of_one_is_sorted
     # skip
     unsorted  = [2]
@@ -18,41 +18,57 @@ class BubbleSortTest < Minitest::Test
     assert_equal expected, submitted
   end
 
-  def test_bubble_sorts_two_nums
+  def test_bubble_sort_array_of_one_is_sorted
     # skip
-    unsorted  = [2, 1]
+    unsorted  = [2]
     submitted = @sorter.sort(unsorted)
-    expected  = [1, 2]
+    expected  = [2]
 
     assert_equal expected, submitted
   end
 
-  def test_bubble_sorts_three_nums
+  def test_bubble_sorts_even_numbered_array
     # skip
-    unsorted  = [3, 2, 1]
-    submitted = @sorter.sort(unsorted)
-    expected  = [1, 2, 3]
+    submitted = @sorter.sort([4, 3, 2, 1])
+    expected  = [1, 2, 3, 4]
 
     assert_equal expected, submitted
   end
 
-  def test_bubble_sorts_multiple_nums
-    unsorted  = [0, 2, 1, 3, 4, 5]
-    submitted = @sorter.sort(unsorted)
-    expected  = [0, 1, 2, 3, 4, 5]
+  def test_bubble_sorts_odd_numbered_array
+    # skip
+    submitted = @sorter.sort([3, 2, 5, 4, 1])
+    expected  = [1, 2, 3, 4, 5]
 
     assert_equal expected, submitted
   end
 
-  def test_bubble_sorts_nums_with_duplicates
-    unsorted  = [0, 2, 1, 3, 0, 4, 50, 5, 0]
-    submitted = @sorter.sort(unsorted)
-    expected  = [0, 0, 0, 1, 2, 3, 4, 5, 50]
+  def test_bubble_sorts_larger_even_numbered_array
+    # skip
+    submitted = @sorter.sort([6, 5, 3, 1, 8, 7, 2, 4])
+    expected  = [1, 2, 3, 4, 5, 6, 7, 8]
+
+    assert_equal expected, submitted
+  end
+
+  def test_bubble_sorts_larger_odd_numbered_array
+    # skip
+    submitted = @sorter.sort([15, 42, 16, 50, 108, 23, 8, 4, 0])
+    expected  = [0, 4, 8, 15, 16, 23, 42, 50, 108]
+
+    assert_equal expected, submitted
+  end
+
+  def test_bubble_still_sorts_with_nested_arrays
+    # skip
+    submitted = @sorter.sort([[15, 42, 16], 50, 108, [23, 8, 4], 0])
+    expected  = [0, 4, 8, 15, 16, 23, 42, 50, 108]
 
     assert_equal expected, submitted
   end
 
   def test_bubble_sorts_multiple_chars
+    # skip
     unsorted  = ["d", "b", "a", "c"]
     submitted = @sorter.sort(unsorted)
     expected  = ["a", "b", "c", "d"]
@@ -61,6 +77,7 @@ class BubbleSortTest < Minitest::Test
   end
 
   def test_bubble_sorts_non_chars
+    # skip
     unsorted  = ["d", "b", "*", "a", ",", "c"]
     submitted = @sorter.sort(unsorted)
     expected  = ["*", ",", "a", "b", "c", "d"]
@@ -68,10 +85,10 @@ class BubbleSortTest < Minitest::Test
     assert_equal expected, submitted
   end
 
-  def test_bubble_sorts_elements_in_nested_arrays
-    unsorted  = [[0], 4, [1], [2, 6], [3, 5]]
+  def test_bubble_sorts_nested_chars_and_duplicates
+    unsorted  = ["d", "b", ["*", "a"], ",", "c", "z", ["k", "z"]]
     submitted = @sorter.sort(unsorted)
-    expected  = [0, 1, 2, 3, 4, 5, 6]
+    expected  = ["*", ",", "a", "b", "c", "d", "k", "z", "z"]
 
     assert_equal expected, submitted
   end
