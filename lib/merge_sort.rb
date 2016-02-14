@@ -30,7 +30,6 @@ class MergeSort
       !arr.empty?
     end
 
-    binding.pry 
     final.flatten!
   end
 
@@ -45,7 +44,7 @@ class MergeSort
 
   def process(array)
     result = []
-    (array.flatten.count - 1).times do
+    (array.flatten.count).times do
       if array[1][0].nil?
         until array[0][0].nil?
           result << array[0][0]
