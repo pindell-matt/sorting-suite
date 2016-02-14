@@ -29,10 +29,3 @@ class InsertionSort
   end
 
 end
-
-if __FILE__ == $0
-  s = InsertionSort.new
-  array = [3, 2, 4, 12, 1]
-  puts s.inplace_sort(array).object_id == array.object_id
-  puts s.inplace_sort(array)
-end
