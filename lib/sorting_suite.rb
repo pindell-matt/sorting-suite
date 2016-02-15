@@ -42,15 +42,9 @@ module SortingSuite
   end
 
   class Benchmark
-    attr_reader :sorter, :array
 
-    def initialize(sorter, array)
-      @sorter = sorter
-      @array  = array
-    end
-
-    def time(sorter, array
-      sorter.new.sort(array)
+    def time(sorter, array)
+      sorter.new(array)
     end
 
   end
@@ -66,5 +60,5 @@ if __FILE__ == $0
   SortingSuite::Selection.new(array)
 
   benchmark = SortingSuite::Benchmark.new
-  benchmark.time(SortingSuite::Insertion, [3,3,4,5,1])
+  benchmark.time(SortingSuite::Bubble, [3,3,4,5,1])
 end
