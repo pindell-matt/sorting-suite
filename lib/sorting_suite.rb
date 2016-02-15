@@ -41,12 +41,11 @@ module SortingSuite
     end
   end
 
-  class Benchmark
-
-    def time(sorter, array)
-      sorter.new(array)
+  class Bench
+    def time(method, array)
+      var = Benchmark.measure {method.new(array)}
+      puts "#{method.to_s.split("::")[1]} Sort took #{var.real.round(6)} seconds"
     end
-
   end
 
 end
@@ -59,6 +58,6 @@ if __FILE__ == $0
   SortingSuite::Merge.new(array)
   SortingSuite::Selection.new(array)
 
-  benchmark = SortingSuite::Benchmark.new
-  benchmark.time(SortingSuite::Bubble, [3,3,4,5,1])
+  benchmark = SortingSuite::Bench.new
+  benchmark.time(SortingSuite::Bubble, (array))
 end
