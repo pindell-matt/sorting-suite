@@ -76,6 +76,7 @@ end
 
 if __FILE__ == $0
   array = [5, 4, 3, 2, 1]
+  # array = (0..10_000).to_a.shuffle
   # SortingSuite::Bubble.new(array)
   # SortingSuite::Insertion.new(array).inplace_sort
   # SortingSuite::Insertion.new(array).sort
