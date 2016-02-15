@@ -9,6 +9,30 @@ class BubbleSortTest < Minitest::Test
     @sorter = BubbleSort.new
   end
 
+  def test_swap_two_elements
+    array     = [2, 1]
+    submitted = @sorter.swap!(array, 0, 1)
+    expected  = [1, 2]
+
+    assert_equal expected, submitted
+  end
+
+  def test_swap_two_elements
+    array     = [5, 2, 3, 4, 1]
+    submitted = @sorter.swap!(array, 0, -1)
+    expected  = [1, 2, 3, 4, 5]
+
+    assert_equal expected, submitted
+  end
+
+  def test_bubble_sort_returns_empty_array
+    unsorted  = []
+    submitted = @sorter.sort(unsorted)
+    expected  = []
+
+    assert_equal expected, submitted
+  end
+
   def test_array_of_one_is_sorted
     # skip
     unsorted  = [2]
