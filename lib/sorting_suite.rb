@@ -47,7 +47,6 @@ module SortingSuite
       sorter.new(array)
     end
 
->>>>>>> master
   end
 
 end
