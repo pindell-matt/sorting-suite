@@ -20,7 +20,6 @@ class InsertionSortTest < Minitest::Test
   end
 
   def test_insertion_sort_array_of_one_is_sorted
-    # skip
     unsorted      = [2]
     standard_sort = @sorter.sort(unsorted)
     inplace_sort  = @sorter.inplace_sort(unsorted)
@@ -31,7 +30,6 @@ class InsertionSortTest < Minitest::Test
   end
 
   def test_insertion_sorts_even_numbered_array
-    # skip
     unsorted      = [4, 3, 2, 1]
     standard_sort = @sorter.sort(unsorted)
     inplace_sort  = @sorter.inplace_sort(unsorted)
@@ -42,7 +40,6 @@ class InsertionSortTest < Minitest::Test
   end
 
   def test_insertion_sorts_odd_numbered_array
-    #
     unsorted      = [3, 2, 5, 4, 1]
     standard_sort = @sorter.sort(unsorted)
     inplace_sort  = @sorter.inplace_sort(unsorted)
@@ -53,7 +50,6 @@ class InsertionSortTest < Minitest::Test
   end
 
   def test_insertion_sorts_larger_even_numbered_array
-    # skip
     unsorted      = [6, 5, 3, 1, 8, 7, 2, 4]
     standard_sort = @sorter.sort(unsorted)
     inplace_sort  = @sorter.inplace_sort(unsorted)
@@ -64,7 +60,6 @@ class InsertionSortTest < Minitest::Test
   end
 
   def test_insertion_sorts_larger_odd_numbered_array
-    # skip
     unsorted      = [15, 42, 16, 50, 108, 23, 8, 4, 0]
     standard_sort = @sorter.sort(unsorted)
     inplace_sort  = @sorter.inplace_sort(unsorted)
@@ -75,7 +70,6 @@ class InsertionSortTest < Minitest::Test
   end
 
   def test_insertion_still_sorts_with_nested_arrays
-    # skip
     unsorted      = [[15, 42, 16], 50, 108, [23, 8, 4], 0]
     standard_sort = @sorter.sort(unsorted)
     inplace_sort  = @sorter.inplace_sort(unsorted)
@@ -86,7 +80,6 @@ class InsertionSortTest < Minitest::Test
   end
 
   def test_insertion_sorts_multiple_chars
-    # skip
     unsorted      = ["d", "b", "a", "c"]
     standard_sort = @sorter.sort(unsorted)
     inplace_sort  = @sorter.inplace_sort(unsorted)
@@ -97,7 +90,6 @@ class InsertionSortTest < Minitest::Test
   end
 
   def test_insertion_sorts_non_chars
-    # skip
     unsorted      = ["d", "b", "*", "a", ",", "c"]
     standard_sort = @sorter.sort(unsorted)
     inplace_sort  = @sorter.inplace_sort(unsorted)

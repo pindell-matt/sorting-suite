@@ -9,7 +9,7 @@ module SortingSuite
 
   class Bubble
     def initialize(array)
-      pp BubbleSort.new.sort(array)
+      BubbleSort.new.sort(array)
     end
   end
 
@@ -21,23 +21,23 @@ module SortingSuite
     end
 
     def inplace_sort
-      pp InsertionSort.new.inplace_sort(array)
+      InsertionSort.new.inplace_sort(array)
     end
 
     def sort
-      pp InsertionSort.new.sort(array)
+      InsertionSort.new.sort(array)
     end
   end
 
   class Merge
     def initialize(array)
-      pp MergeSort.new.sort(array)
+      MergeSort.new.sort(array)
     end
   end
 
   class Selection
     def initialize(array)
-      pp SelectionSort.new.sort(array)
+      SelectionSort.new.sort(array)
     end
   end
 
@@ -75,16 +75,12 @@ module SortingSuite
 end
 
 if __FILE__ == $0
-  array = [5, 4, 3, 2, 1]
-  # array = (0..10_000).to_a.shuffle
-  # SortingSuite::Bubble.new(array)
-  # SortingSuite::Insertion.new(array).inplace_sort
-  # SortingSuite::Insertion.new(array).sort
-  # SortingSuite::Merge.new(array)
-  # SortingSuite::Selection.new(array)
+  array = (0..50_000).to_a.shuffle
 
   benchmark = SortingSuite::Bench.new
   benchmark.time(SortingSuite::Bubble, (array))
+  benchmark.time(SortingSuite::Selection, (array))
+  benchmark.time(SortingSuite::Insertion, (array))
   benchmark.time(SortingSuite::Merge, (array))
   benchmark.fastest(array)
   benchmark.slowest(array)
