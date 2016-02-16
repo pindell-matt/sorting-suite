@@ -19,9 +19,3 @@ class SelectionSort
     array
   end
 end
-
-if __FILE__ == $0
-  s = SelectionSort.new
-  array = [3, 2, 4, 1, 12]
-  puts s.sort(array)
-end

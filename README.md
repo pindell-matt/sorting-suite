@@ -5,7 +5,7 @@ Insertion Sort, Selection Sort, and Merge Sort.
 
 ## 1. Bubble Sort
 
-Description of [Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort)
+[Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort)
 
 ```ruby
 sorter = BubbleSort.new
@@ -16,7 +16,7 @@ sorter.sort(["d", "b", "a", "c"])
 
 ## 2. Insertion Sort
 
-Description of [Insertion Sort](https://en.wikipedia.org/wiki/Insertion_sort)
+[Insertion Sort](https://en.wikipedia.org/wiki/Insertion_sort)
 
 ```ruby
 sorter = InsertionSort.new
