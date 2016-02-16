@@ -42,15 +42,6 @@ class BubbleSortTest < Minitest::Test
     assert_equal expected, submitted
   end
 
-  def test_bubble_sort_array_of_one_is_sorted
-    # skip
-    unsorted  = [2]
-    submitted = @sorter.sort(unsorted)
-    expected  = [2]
-
-    assert_equal expected, submitted
-  end
-
   def test_bubble_sorts_even_numbered_array
     # skip
     submitted = @sorter.sort([4, 3, 2, 1])
